@@ -58,10 +58,12 @@ class GCloudHandler(StreamHandler):
         if record.exc_info:
             # Received an Exception
             e = record.exc_info[1]
-            logging_fields['logging.googleapis.com/labels']['exception'] = {
-                "exception": e.__class__.__name__,
-                "module": e.__class__.__module__,
-                "message": str(e)
+            logging_fields['logging.googleapis.com/labels'] = {
+                'exception' : {
+                    "exception": e.__class__.__name__,
+                    "module": e.__class__.__module__,
+                    "message": str(e)
+                }
             }
 
         # Complete a structured log entry.
