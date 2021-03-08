@@ -79,8 +79,8 @@ class GrpcExceptionHandler(object):
         :param rpcError:    The gRPC Exception with status code and details
         :returns:           The Python Exception
         """
-        if rpcError.code() in ExceptionHandler.GRPC_CODE_MAP:
-            return ExceptionHandler.GRPC_CODE_MAP[rpcError.code()](rpcError.details())
+        if rpcError.code() in GrpcExceptionHandler.GRPC_CODE_MAP:
+            return GrpcExceptionHandler.GRPC_CODE_MAP[rpcError.code()](rpcError.details())
         else:
             return Exception(rpcError.details())
 
@@ -107,7 +107,7 @@ class GrpcExceptionHandler(object):
         else:
             logger.exception(f"{type(error).__name__}: {str(error)}")
 
-        for code, errorClass in ExceptionHandler.GRPC_CODE_MAP.items():
+        for code, errorClass in GrpcExceptionHandler.GRPC_CODE_MAP.items():
             if errorClass == type(error):
                 return code, str(error)
 
