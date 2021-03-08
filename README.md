@@ -3,7 +3,7 @@
 An example app for 2 Python Microservices instrumented using OpenTelemetry
 and running on Google Cloud Run.
 
-Read full blog here:
+Read full blog here: https://davidgildeh.com/2021/03/08/running-python-opentelemetry-with-google-cloud-run/
 
 ## Deploying to Google Cloud Run
 
