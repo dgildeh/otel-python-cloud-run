@@ -68,3 +68,7 @@ Then install all the Python module requirements:
 ```bash
 pip install -r requirements.txt
 ```
+
+## Generate gRPC Classes from Protos
+
+Each new service should have its own service package with a `protos` folder holding all the proto files to define the gRPC message and service types. The `generate-grpc.sh` script will iterate through all the services to generate the gRPC classes under a `generated` package under the service package which can then be used by the server and clients to communicate with the service. If you add new services, please edit the list of services at the top of the bash script so they get generated too. As you make changes to your proto files, you can use this script to quickly regenerate the classes each time.
