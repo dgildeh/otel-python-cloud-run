@@ -1,0 +1,15 @@
+# requirements.txt
+
+# Developer Dependencies
+grpcio-tools==1.34.1
+
+# Setup Dependencies
+grpcio==1.34.1
+opentelemetry-api==0.17b0
+opentelemetry-sdk==0.17b0
+opentelemetry-exporter-google-cloud==0.17b0
+opentelemetry-instrumentation-grpc==0.17b0
+
+# These two should be imported with opentelemetry-instrumentation-grpc in future!
+wrapt==1.12.1
+opentelemetry-instrumentation==0.17b0

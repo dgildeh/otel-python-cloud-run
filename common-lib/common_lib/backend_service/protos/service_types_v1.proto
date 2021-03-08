@@ -1,0 +1,13 @@
+syntax = "proto3";
+package service.v1;
+
+// Greet Messages
+
+message GreetRequest {
+  string name = 1;
+  bool withError = 2;
+}
+
+message GreetResult {
+  string reply = 2;
+}

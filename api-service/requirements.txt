@@ -1,0 +1,6 @@
+fastapi==0.61.1
+# Common-lib
+../common-lib
+
+# Observability
+opentelemetry-instrumentation-fastapi==0.17b0

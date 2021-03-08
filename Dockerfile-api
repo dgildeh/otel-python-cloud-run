@@ -1,0 +1,12 @@
+# Use the official lightweight FastAPI image.
+# https://hub.docker.com/r/tiangolo/uvicorn-gunicorn-fastapi/
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.8-slim
+
+# Allow statements and log messages to immediately appear in the Knative logs
+ENV PYTHONUNBUFFERED True
+
+# Copy local code to the container image and install dependencies.
+COPY api-service /app
+COPY common-lib /common-lib
+RUN pip install --upgrade pip && pip install /common-lib && rm -rf /common-lib
+RUN pip install opentelemetry-instrumentation-fastapi==0.17b0

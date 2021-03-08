@@ -1,0 +1,13 @@
+**/.idea/
+**/.DS_Store
+**/venv
+**/__pycache__
+**/*.md
+**/tests/
+**/.pytest_cache/
+**/.dockerignore
+**/.git
+**/.gitignore
+**/requirements-dev.txt
+Dockerfile-backend
+Dockerfile-api

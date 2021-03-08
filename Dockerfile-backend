@@ -1,0 +1,14 @@
+# Use the official lightweight Python image.
+# https://hub.docker.com/_/python
+FROM python:3.8-slim
+
+# Allow statements and log messages to immediately appear in the Knative logs
+ENV PYTHONUNBUFFERED True
+
+# Copy local code to the container image and install dependencies.
+COPY backend-service /app/backend-service
+COPY common-lib /app/common-lib
+RUN cd /app/backend-service && pip install -r requirements.txt
+
+ENV PYTHONPATH "${PYTHONPATH}:/app/backend-service"
+CMD exec python /app/backend-service/backend_service/server.py

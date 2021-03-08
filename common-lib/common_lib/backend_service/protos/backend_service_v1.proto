@@ -1,0 +1,15 @@
+syntax = "proto3";
+// Always version your services!
+package backend_service.v1;
+
+import "service_types_v1.proto";
+
+service BackendService {
+
+  /*
+  A simple gRPC method that generates some logs and a trace span.
+
+  Send a name and get a simple `Hello {name}` back
+   */
+  rpc Greet (service.v1.GreetRequest) returns (service.v1.GreetResult);
+}
