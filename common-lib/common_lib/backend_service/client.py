@@ -29,7 +29,7 @@ class BackendServiceClient(AuthenticatedClient):
         if stub:
             self._stub = stub
         else:
-            channel = self.get_channel(host, port)
+            channel = self.get_channel(host, port, 'backend_service.v1.BackendService')
             self._stub = BackendServiceStub(channel)
 
     ###############################################################################################
